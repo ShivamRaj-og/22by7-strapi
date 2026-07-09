@@ -116,6 +116,7 @@ export interface HomeBanner extends Schema.Component {
   attributes: {
     description: Attribute.Text;
     servicesLeft: Attribute.Component<'partials.card-home-hero', true>;
+    servicesRight: Attribute.Component<'partials.card-home-hero', true>;
     status: Attribute.Component<'partials.status'>;
     title: Attribute.String;
   };
@@ -150,6 +151,7 @@ export interface HomeIndustriesSection extends Schema.Component {
 export interface HomeIntroSection extends Schema.Component {
   collectionName: 'components_home_intro_sections';
   info: {
+    description: '';
     displayName: 'Intro Section';
   };
   attributes: {
@@ -229,11 +231,13 @@ export interface PartialsImgText extends Schema.Component {
 export interface PartialsNumText extends Schema.Component {
   collectionName: 'components_partials_num_texts';
   info: {
+    description: '';
     displayName: 'num.text';
   };
   attributes: {
     label: Attribute.Text;
     number: Attribute.String;
+    suffix: Attribute.String;
   };
 }
 

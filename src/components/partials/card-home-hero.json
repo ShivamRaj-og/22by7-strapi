@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_partials_card_home_heroes",
+  "info": {
+    "displayName": "card.home.hero"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "link": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "bgColor": {
+      "type": "string"
+    },
+    "textColor": {
+      "type": "string"
+    }
+  }
+}

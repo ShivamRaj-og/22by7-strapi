@@ -4,7 +4,8 @@
   "info": {
     "singularName": "page-template",
     "pluralName": "page-templates",
-    "displayName": "Page Template"
+    "displayName": "Page Template",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,7 +18,16 @@
     "sections": {
       "type": "dynamiczone",
       "components": [
-        "home.banner"
+        "home.banner",
+        "home.brand-marque",
+        "home.aura-section",
+        "home.intro-section",
+        "home.our-portfolio",
+        "home.industries-section",
+        "home.awards-section",
+        "common.testimonial-section",
+        "common.header",
+        "common.footer"
       ]
     }
   }

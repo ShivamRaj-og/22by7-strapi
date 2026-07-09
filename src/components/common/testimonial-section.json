@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_home_banners",
+  "collectionName": "components_common_testimonial_sections",
   "info": {
-    "displayName": "Banner",
-    "description": ""
+    "displayName": "Testimonial Section"
   },
   "options": {},
   "attributes": {
@@ -17,11 +16,11 @@
     "description": {
       "type": "text"
     },
-    "servicesLeft": {
-      "displayName": "card.home.hero",
+    "cards": {
+      "displayName": "test.card",
       "type": "component",
       "repeatable": true,
-      "component": "partials.card-home-hero"
+      "component": "common.test-card"
     }
   }
 }

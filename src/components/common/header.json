@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_common_headers",
+  "info": {
+    "displayName": "Header"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    }
+  }
+}

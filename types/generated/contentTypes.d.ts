@@ -425,6 +425,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
 export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
   collectionName: 'page_templates';
   info: {
+    description: '';
     displayName: 'Page Template';
     pluralName: 'page-templates';
     singularName: 'page-template';
@@ -441,7 +442,20 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
     > &
       Attribute.Private;
     publishedAt: Attribute.DateTime;
-    sections: Attribute.DynamicZone<['home.banner']>;
+    sections: Attribute.DynamicZone<
+      [
+        'home.banner',
+        'home.brand-marque',
+        'home.aura-section',
+        'home.intro-section',
+        'home.our-portfolio',
+        'home.industries-section',
+        'home.awards-section',
+        'common.testimonial-section',
+        'common.header',
+        'common.footer'
+      ]
+    >;
     title: Attribute.String;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<

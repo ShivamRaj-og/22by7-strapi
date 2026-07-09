@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_partials_img_texts",
+  "info": {
+    "displayName": "img.text"
+  },
+  "options": {},
+  "attributes": {
+    "alt": {
+      "type": "string"
+    },
+    "src": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

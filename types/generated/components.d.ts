@@ -1,5 +1,13 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CommonStatus extends Struct.ComponentSchema {
+  collectionName: 'components_common_statuses';
+  info: {
+    displayName: 'Status';
+  };
+  attributes: {};
+}
+
 export interface HomeBanner extends Struct.ComponentSchema {
   collectionName: 'components_home_banners';
   info: {
@@ -75,6 +83,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
+      'common.status': CommonStatus;
       'home.banner': HomeBanner;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

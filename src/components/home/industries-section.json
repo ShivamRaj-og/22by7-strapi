@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_home_banners",
+  "collectionName": "components_home_industries_sections",
   "info": {
-    "displayName": "Banner",
+    "displayName": "Industries Section",
     "description": ""
   },
   "options": {},
@@ -17,11 +17,10 @@
     "description": {
       "type": "text"
     },
-    "servicesLeft": {
-      "displayName": "card.home.hero",
+    "industries": {
       "type": "component",
       "repeatable": true,
-      "component": "partials.card-home-hero"
+      "component": "partials.img-text"
     }
   }
 }

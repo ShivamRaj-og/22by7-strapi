@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_partials_text_text_imgs",
+  "info": {
+    "displayName": "text.text.img"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_partials_ctas",
+  "info": {
+    "displayName": "cta"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "text"
+    }
+  }
+}

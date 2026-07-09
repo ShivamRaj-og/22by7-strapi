@@ -362,9 +362,70 @@ export interface AdminUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogTemplateBlogTemplate extends Schema.CollectionType {
+  collectionName: 'blog_templates';
+  info: {
+    displayName: 'Blog Template';
+    pluralName: 'blog-templates';
+    singularName: 'blog-template';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-template.blog-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    publishedAt: Attribute.DateTime;
+    sections: Attribute.DynamicZone<['blog.blog-content']>;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::blog-template.blog-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    displayName: 'Blog';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Attribute.String;
+    category: Attribute.String;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    date: Attribute.Date;
+    description: Attribute.Text;
+    publishedAt: Attribute.DateTime;
+    readTime: Attribute.Integer;
+    slug: Attribute.UID<'api::blog.blog', 'title'>;
+    thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
   collectionName: 'page_templates';
   info: {
+    description: '';
     displayName: 'Page Template';
     pluralName: 'page-templates';
     singularName: 'page-template';
@@ -381,7 +442,20 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
     > &
       Attribute.Private;
     publishedAt: Attribute.DateTime;
-    sections: Attribute.DynamicZone<['home.banner']>;
+    sections: Attribute.DynamicZone<
+      [
+        'home.banner',
+        'home.brand-marque',
+        'home.aura-section',
+        'home.intro-section',
+        'home.our-portfolio',
+        'home.industries-section',
+        'home.awards-section',
+        'common.testimonial-section',
+        'common.header',
+        'common.footer'
+      ]
+    >;
     title: Attribute.String;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<
@@ -858,6 +932,8 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::blog-template.blog-template': ApiBlogTemplateBlogTemplate;
+      'api::blog.blog': ApiBlogBlog;
       'api::page-template.page-template': ApiPageTemplatePageTemplate;
       'api::page.page': ApiPagePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;

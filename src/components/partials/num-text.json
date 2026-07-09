@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_partials_num_texts",
+  "info": {
+    "displayName": "num.text"
+  },
+  "options": {},
+  "attributes": {
+    "number": {
+      "type": "string"
+    },
+    "label": {
+      "type": "text"
+    }
+  }
+}

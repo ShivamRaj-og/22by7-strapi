@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_partials_staus",
+  "info": {
+    "displayName": "Status"
+  },
+  "options": {},
+  "attributes": {
+    "visible": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

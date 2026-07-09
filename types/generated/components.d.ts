@@ -1,13 +1,5 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface CommonStatus extends Struct.ComponentSchema {
-  collectionName: 'components_common_statuses';
-  info: {
-    displayName: 'Status';
-  };
-  attributes: {};
-}
-
 export interface HomeBanner extends Struct.ComponentSchema {
   collectionName: 'components_home_banners';
   info: {
@@ -15,6 +7,16 @@ export interface HomeBanner extends Struct.ComponentSchema {
   };
   attributes: {
     title: Schema.Attribute.String;
+  };
+}
+
+export interface PartialsStaus extends Struct.ComponentSchema {
+  collectionName: 'components_partials_staus';
+  info: {
+    displayName: 'Status';
+  };
+  attributes: {
+    visible: Schema.Attribute.Boolean;
   };
 }
 
@@ -83,8 +85,8 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
-      'common.status': CommonStatus;
       'home.banner': HomeBanner;
+      'partials.staus': PartialsStaus;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_blog_blog_contents",
+  "info": {
+    "displayName": "Blog Content",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "readTime": {
+      "type": "integer"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    }
+  }
+}

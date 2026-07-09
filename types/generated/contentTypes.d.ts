@@ -390,7 +390,10 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
         'home.intro-section',
         'home.our-portfolio',
         'home.industries-section',
-        'home.awards-section'
+        'home.awards-section',
+        'common.testimonial-section',
+        'common.header',
+        'common.footer'
       ]
     >;
     title: Attribute.String;

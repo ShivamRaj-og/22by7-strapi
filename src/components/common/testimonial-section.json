@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_common_testimonial_sections",
+  "info": {
+    "displayName": "Testimonial Section"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cards": {
+      "displayName": "test.card",
+      "type": "component",
+      "repeatable": true,
+      "component": "common.test-card"
+    }
+  }
+}

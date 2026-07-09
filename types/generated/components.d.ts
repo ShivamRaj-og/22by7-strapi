@@ -1,5 +1,53 @@
 import type { Attribute, Schema } from '@strapi/strapi';
 
+export interface CommonFooter extends Schema.Component {
+  collectionName: 'components_common_footers';
+  info: {
+    displayName: 'Footer';
+  };
+  attributes: {
+    status: Attribute.Component<'partials.status'>;
+  };
+}
+
+export interface CommonHeader extends Schema.Component {
+  collectionName: 'components_common_headers';
+  info: {
+    displayName: 'Header';
+  };
+  attributes: {
+    status: Attribute.Component<'partials.status'>;
+  };
+}
+
+export interface CommonTestCard extends Schema.Component {
+  collectionName: 'components_common_test_cards';
+  info: {
+    displayName: 'test.card';
+  };
+  attributes: {
+    bgColor: Attribute.String;
+    brand: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Attribute.String;
+    personImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    role: Attribute.String;
+    text: Attribute.Text;
+  };
+}
+
+export interface CommonTestimonialSection extends Schema.Component {
+  collectionName: 'components_common_testimonial_sections';
+  info: {
+    displayName: 'Testimonial Section';
+  };
+  attributes: {
+    cards: Attribute.Component<'common.test-card', true>;
+    description: Attribute.Text;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
 export interface HomeAuraSection extends Schema.Component {
   collectionName: 'components_home_aura_sections';
   info: {
@@ -190,6 +238,10 @@ export interface PartialsTextTextImg extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'common.footer': CommonFooter;
+      'common.header': CommonHeader;
+      'common.test-card': CommonTestCard;
+      'common.testimonial-section': CommonTestimonialSection;
       'home.aura-section': HomeAuraSection;
       'home.awards-section': HomeAwardsSection;
       'home.banner': HomeBanner;

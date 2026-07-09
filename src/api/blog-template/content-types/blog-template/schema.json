@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog-template",
     "pluralName": "blog-templates",
-    "displayName": "Blog Template"
+    "displayName": "Blog Template",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,7 +18,9 @@
     "sections": {
       "type": "dynamiczone",
       "components": [
-        "blog.blog-content"
+        "blog.blog-content",
+        "common.header",
+        "common.footer"
       ]
     }
   }

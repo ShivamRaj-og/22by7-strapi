@@ -16,6 +16,24 @@ export interface BlogBlogContent extends Schema.Component {
   };
 }
 
+export interface BlogBlogListing extends Schema.Component {
+  collectionName: 'components_blog_blog_listings';
+  info: {
+    displayName: 'Blog Listing';
+  };
+  attributes: {
+    filter: Attribute.Component<'partials.text', true>;
+    popularBlogs: Attribute.Relation<
+      'blog.blog-listing',
+      'oneToMany',
+      'api::blog.blog'
+    >;
+    popularBlogTitle: Attribute.String;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
 export interface CommonFooter extends Schema.Component {
   collectionName: 'components_common_footers';
   info: {
@@ -255,6 +273,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'blog.blog-content': BlogBlogContent;
+      'blog.blog-listing': BlogBlogListing;
       'common.footer': CommonFooter;
       'common.header': CommonHeader;
       'common.test-card': CommonTestCard;

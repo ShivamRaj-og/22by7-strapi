@@ -27,7 +27,8 @@
         "home.awards-section",
         "common.testimonial-section",
         "common.header",
-        "common.footer"
+        "common.footer",
+        "blog.blog-listing"
       ]
     }
   }

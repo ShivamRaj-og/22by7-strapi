@@ -365,6 +365,7 @@ export interface AdminUser extends Schema.CollectionType {
 export interface ApiBlogTemplateBlogTemplate extends Schema.CollectionType {
   collectionName: 'blog_templates';
   info: {
+    description: '';
     displayName: 'Blog Template';
     pluralName: 'blog-templates';
     singularName: 'blog-template';
@@ -381,7 +382,9 @@ export interface ApiBlogTemplateBlogTemplate extends Schema.CollectionType {
     > &
       Attribute.Private;
     publishedAt: Attribute.DateTime;
-    sections: Attribute.DynamicZone<['blog.blog-content']>;
+    sections: Attribute.DynamicZone<
+      ['blog.blog-content', 'common.header', 'common.footer']
+    >;
     title: Attribute.String;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<
@@ -396,6 +399,7 @@ export interface ApiBlogTemplateBlogTemplate extends Schema.CollectionType {
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
+    description: '';
     displayName: 'Blog';
     pluralName: 'blogs';
     singularName: 'blog';
@@ -405,6 +409,11 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
   attributes: {
     author: Attribute.String;
+    blog_template: Attribute.Relation<
+      'api::blog.blog',
+      'oneToOne',
+      'api::blog-template.blog-template'
+    >;
     category: Attribute.String;
     createdAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
@@ -416,6 +425,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     slug: Attribute.UID<'api::blog.blog', 'title'>;
     thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Attribute.String;
+    type: Attribute.Enumeration<['Blog', 'Pulse']>;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
       Attribute.Private;
@@ -453,7 +463,8 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
         'home.awards-section',
         'common.testimonial-section',
         'common.header',
-        'common.footer'
+        'common.footer',
+        'blog.blog-listing'
       ]
     >;
     title: Attribute.String;

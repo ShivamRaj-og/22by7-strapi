@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_home_banners",
+  "collectionName": "components_home_our_portfolios",
   "info": {
-    "displayName": "Banner",
-    "description": ""
+    "displayName": "Our Portfolio"
   },
   "options": {},
   "attributes": {
@@ -14,14 +13,11 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
-    "servicesLeft": {
-      "displayName": "card.home.hero",
+    "cards": {
+      "displayName": "card.port",
       "type": "component",
       "repeatable": true,
-      "component": "partials.card-home-hero"
+      "component": "partials.card-port"
     }
   }
 }

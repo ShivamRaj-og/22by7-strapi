@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_partials_texts",
+  "info": {
+    "displayName": "text"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    }
+  }
+}

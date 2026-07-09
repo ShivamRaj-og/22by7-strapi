@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_home_brand_marques",
+  "info": {
+    "displayName": "Brand Marque"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "logos": {
+      "displayName": "img.text",
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.img-text"
+    },
+    "marqueeData": {
+      "displayName": "text",
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.text"
+    }
+  }
+}

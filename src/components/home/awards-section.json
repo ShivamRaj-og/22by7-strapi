@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_home_banners",
+  "collectionName": "components_home_awards_sections",
   "info": {
-    "displayName": "Banner",
-    "description": ""
+    "displayName": "Awards Section"
   },
   "options": {},
   "attributes": {
@@ -14,14 +13,10 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
-    "servicesLeft": {
-      "displayName": "card.home.hero",
+    "awards": {
       "type": "component",
       "repeatable": true,
-      "component": "partials.card-home-hero"
+      "component": "partials.img-text"
     }
   }
 }

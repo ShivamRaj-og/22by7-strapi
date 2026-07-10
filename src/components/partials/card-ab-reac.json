@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_partials_card_ab_reacs",
+  "info": {
+    "displayName": "card.ab.reac",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "value": {
+      "type": "string"
+    }
+  }
+}

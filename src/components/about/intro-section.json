@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_about_intro_sections",
+  "info": {
+    "displayName": "Intro Section"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "description1": {
+      "type": "richtext"
+    },
+    "description2": {
+      "type": "richtext"
+    }
+  }
+}

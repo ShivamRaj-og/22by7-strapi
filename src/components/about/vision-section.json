@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_about_vision_sections",
+  "info": {
+    "displayName": "Vision Section"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "cards": {
+      "displayName": "card.vis",
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.card-vis"
+    }
+  }
+}

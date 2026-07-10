@@ -464,7 +464,14 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
         'common.testimonial-section',
         'common.header',
         'common.footer',
-        'blog.blog-listing'
+        'blog.blog-listing',
+        'about.vision-section',
+        'about.team-member',
+        'about.our-team',
+        'about.leader-section',
+        'about.intro-section',
+        'about.banner-section',
+        'about.about-note'
       ]
     >;
     title: Attribute.String;

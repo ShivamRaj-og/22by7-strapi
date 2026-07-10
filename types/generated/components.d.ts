@@ -120,6 +120,36 @@ export interface AcademyConstantSection extends Schema.Component {
   };
 }
 
+export interface AcademyGurukul extends Schema.Component {
+  collectionName: 'components_academy_gurukuls';
+  info: {
+    description: '';
+    displayName: 'Gurukul';
+  };
+  attributes: {
+    description: Attribute.Text;
+    Gurukul: Attribute.String;
+    offerings: Attribute.Component<'partials.guru-card', true>;
+    status: Attribute.Component<'partials.status'>;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface AcademyJourneySection extends Schema.Component {
+  collectionName: 'components_academy_journey_sections';
+  info: {
+    description: '';
+    displayName: 'Journey Section';
+  };
+  attributes: {
+    cta: Attribute.Component<'partials.cta'>;
+    description: Attribute.RichText;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
 export interface AcademyPillar extends Schema.Component {
   collectionName: 'components_academy_pillars';
   info: {
@@ -128,6 +158,20 @@ export interface AcademyPillar extends Schema.Component {
   attributes: {
     pillars: Attribute.Component<'partials.text-text-img', true>;
     status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface AcademyValueSection extends Schema.Component {
+  collectionName: 'components_academy_value_sections';
+  info: {
+    description: '';
+    displayName: 'Value Section';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status', true>;
     title: Attribute.String;
     titleColor: Attribute.String;
   };
@@ -475,6 +519,20 @@ export interface PartialsCta extends Schema.Component {
   };
 }
 
+export interface PartialsGuruCard extends Schema.Component {
+  collectionName: 'components_partials_guru_cards';
+  info: {
+    description: '';
+    displayName: 'guru.card';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subtitle: Attribute.String;
+    title: Attribute.String;
+  };
+}
+
 export interface PartialsImgText extends Schema.Component {
   collectionName: 'components_partials_img_texts';
   info: {
@@ -554,7 +612,10 @@ declare module '@strapi/types' {
       'about.vision-section': AboutVisionSection;
       'academy.banner-section': AcademyBannerSection;
       'academy.constant-section': AcademyConstantSection;
+      'academy.gurukul': AcademyGurukul;
+      'academy.journey-section': AcademyJourneySection;
       'academy.pillar': AcademyPillar;
+      'academy.value-section': AcademyValueSection;
       'blog.blog-content': BlogBlogContent;
       'blog.blog-listing': BlogBlogListing;
       'blog.pluse-listing': BlogPluseListing;
@@ -580,6 +641,7 @@ declare module '@strapi/types' {
       'partials.card-port': PartialsCardPort;
       'partials.card-vis': PartialsCardVis;
       'partials.cta': PartialsCta;
+      'partials.guru-card': PartialsGuruCard;
       'partials.img-text': PartialsImgText;
       'partials.num-text': PartialsNumText;
       'partials.status': PartialsStatus;

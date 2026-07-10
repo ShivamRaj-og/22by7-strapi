@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_academy_journey_sections",
+  "info": {
+    "displayName": "Journey Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.cta"
+    }
+  }
+}

@@ -409,17 +409,17 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
   attributes: {
     author: Attribute.String;
-    blog_template: Attribute.Relation<
-      'api::blog.blog',
-      'oneToOne',
-      'api::blog-template.blog-template'
-    >;
     category: Attribute.String;
     createdAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     date: Attribute.Date;
     description: Attribute.Text;
+    page_template: Attribute.Relation<
+      'api::blog.blog',
+      'oneToOne',
+      'api::blog-template.blog-template'
+    >;
     publishedAt: Attribute.DateTime;
     readTime: Attribute.Integer;
     slug: Attribute.UID<'api::blog.blog', 'title'>;
@@ -464,7 +464,8 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
         'common.testimonial-section',
         'common.header',
         'common.footer',
-        'blog.blog-listing'
+        'blog.blog-listing',
+        'blog.pluse-listing'
       ]
     >;
     title: Attribute.String;

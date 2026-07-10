@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_blog_pluse_listings",
+  "info": {
+    "displayName": "Pluse Listing",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "postTitle": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.text"
+    },
+    "about": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.text-desc"
+    },
+    "newsletter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.text-desc"
+    }
+  }
+}

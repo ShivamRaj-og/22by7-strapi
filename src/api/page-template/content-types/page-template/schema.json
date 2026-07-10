@@ -28,7 +28,8 @@
         "common.testimonial-section",
         "common.header",
         "common.footer",
-        "blog.blog-listing"
+        "blog.blog-listing",
+        "blog.pluse-listing"
       ]
     }
   }

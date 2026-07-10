@@ -34,6 +34,21 @@ export interface BlogBlogListing extends Schema.Component {
   };
 }
 
+export interface BlogPluseListing extends Schema.Component {
+  collectionName: 'components_blog_pluse_listings';
+  info: {
+    description: '';
+    displayName: 'Pluse Listing';
+  };
+  attributes: {
+    about: Attribute.Component<'partials.text-desc'>;
+    newsletter: Attribute.Component<'partials.text-desc'>;
+    postTitle: Attribute.String;
+    status: Attribute.Component<'partials.status'>;
+    tags: Attribute.Component<'partials.text', true>;
+  };
+}
+
 export interface CommonFooter extends Schema.Component {
   collectionName: 'components_common_footers';
   info: {
@@ -261,6 +276,17 @@ export interface PartialsText extends Schema.Component {
   };
 }
 
+export interface PartialsTextDesc extends Schema.Component {
+  collectionName: 'components_partials_text_descs';
+  info: {
+    displayName: 'Text.Desc';
+  };
+  attributes: {
+    description: Attribute.Text;
+    title: Attribute.String;
+  };
+}
+
 export interface PartialsTextTextImg extends Schema.Component {
   collectionName: 'components_partials_text_text_imgs';
   info: {
@@ -278,6 +304,7 @@ declare module '@strapi/types' {
     export interface Components {
       'blog.blog-content': BlogBlogContent;
       'blog.blog-listing': BlogBlogListing;
+      'blog.pluse-listing': BlogPluseListing;
       'common.footer': CommonFooter;
       'common.header': CommonHeader;
       'common.test-card': CommonTestCard;
@@ -296,6 +323,7 @@ declare module '@strapi/types' {
       'partials.num-text': PartialsNumText;
       'partials.status': PartialsStatus;
       'partials.text': PartialsText;
+      'partials.text-desc': PartialsTextDesc;
       'partials.text-text-img': PartialsTextTextImg;
     }
   }

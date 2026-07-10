@@ -52,7 +52,7 @@
         "Pulse"
       ]
     },
-    "blog_template": {
+    "page_template": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::blog-template.blog-template"

@@ -22,7 +22,7 @@
     "page_template": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::blog-template.blog-template"
+      "target": "api::service-template.service-template"
     }
   }
 }

@@ -583,7 +583,7 @@ export interface ApiServiceService extends Schema.CollectionType {
     page_template: Attribute.Relation<
       'api::service.service',
       'oneToOne',
-      'api::blog-template.blog-template'
+      'api::service-template.service-template'
     >;
     publishedAt: Attribute.DateTime;
     slug: Attribute.UID<'api::service.service', 'title'>;

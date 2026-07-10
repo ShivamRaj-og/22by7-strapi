@@ -454,9 +454,11 @@ export interface PartialsCardPort extends Schema.Component {
 export interface PartialsCardService extends Schema.Component {
   collectionName: 'components_partials_card_services';
   info: {
+    description: '';
     displayName: 'Card.Service';
   };
   attributes: {
+    bgColor: Attribute.String;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     item1: Attribute.String;
     item2: Attribute.String;

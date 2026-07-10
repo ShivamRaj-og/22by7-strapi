@@ -8,7 +8,7 @@
   "attributes": {
     "status": {
       "type": "component",
-      "repeatable": true,
+      "repeatable": false,
       "component": "partials.status"
     },
     "title": {
@@ -18,14 +18,15 @@
       "type": "string"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

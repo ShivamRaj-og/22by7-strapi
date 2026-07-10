@@ -128,9 +128,9 @@ export interface AcademyGurukul extends Schema.Component {
   };
   attributes: {
     description: Attribute.Text;
-    Gurukul: Attribute.String;
     offerings: Attribute.Component<'partials.guru-card', true>;
     status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
     titleColor: Attribute.String;
   };
 }
@@ -171,7 +171,7 @@ export interface AcademyValueSection extends Schema.Component {
   };
   attributes: {
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    status: Attribute.Component<'partials.status', true>;
+    status: Attribute.Component<'partials.status'>;
     title: Attribute.String;
     titleColor: Attribute.String;
   };

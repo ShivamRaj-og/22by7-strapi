@@ -11,7 +11,7 @@
       "repeatable": false,
       "component": "partials.status"
     },
-    "Gurukul": {
+    "title": {
       "type": "string"
     },
     "titleColor": {

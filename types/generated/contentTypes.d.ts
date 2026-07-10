@@ -482,7 +482,14 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
         'academy.journey-section',
         'academy.gurukul',
         'academy.constant-section',
-        'academy.banner-section'
+        'academy.banner-section',
+        'lifeat.whatwe',
+        'lifeat.join-section',
+        'lifeat.finding-section',
+        'lifeat.employee-section',
+        'lifeat.culture-section',
+        'lifeat.constant-section',
+        'lifeat.banner-section'
       ]
     >;
     title: Attribute.String;

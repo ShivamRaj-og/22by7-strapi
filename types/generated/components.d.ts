@@ -190,6 +190,47 @@ export interface CommonTestimonialSection extends Schema.Component {
   };
 }
 
+export interface ContactBannerForm extends Schema.Component {
+  collectionName: 'components_contact_banner_forms';
+  info: {
+    displayName: 'Banner Form';
+  };
+  attributes: {
+    bgImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Attribute.String;
+    formHeading: Attribute.String;
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
+export interface ContactFindUs extends Schema.Component {
+  collectionName: 'components_contact_find_uses';
+  info: {
+    displayName: 'Find Us';
+  };
+  attributes: {
+    mapLink: Attribute.Text;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
+export interface ContactHeadquarters extends Schema.Component {
+  collectionName: 'components_contact_headquarters';
+  info: {
+    description: '';
+    displayName: 'Headquarters';
+  };
+  attributes: {
+    cards: Attribute.Component<'partials.card-cnt-hq', true>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColour: Attribute.String;
+  };
+}
+
 export interface HomeAuraSection extends Schema.Component {
   collectionName: 'components_home_aura_sections';
   info: {
@@ -296,6 +337,21 @@ export interface PartialsCardAbReac extends Schema.Component {
     description: Attribute.Text;
     title: Attribute.String;
     value: Attribute.String;
+  };
+}
+
+export interface PartialsCardCntHq extends Schema.Component {
+  collectionName: 'components_partials_card_cnt_hqs';
+  info: {
+    displayName: 'Card.Cnt.HQ';
+  };
+  attributes: {
+    address: Attribute.String;
+    bgImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    email: Attribute.String;
+    fax: Attribute.String;
+    location: Attribute.String;
+    mobile: Attribute.String;
   };
 }
 
@@ -449,6 +505,9 @@ declare module '@strapi/types' {
       'common.header': CommonHeader;
       'common.test-card': CommonTestCard;
       'common.testimonial-section': CommonTestimonialSection;
+      'contact.banner-form': ContactBannerForm;
+      'contact.find-us': ContactFindUs;
+      'contact.headquarters': ContactHeadquarters;
       'home.aura-section': HomeAuraSection;
       'home.awards-section': HomeAwardsSection;
       'home.banner': HomeBanner;
@@ -457,6 +516,7 @@ declare module '@strapi/types' {
       'home.intro-section': HomeIntroSection;
       'home.our-portfolio': HomeOurPortfolio;
       'partials.card-ab-reac': PartialsCardAbReac;
+      'partials.card-cnt-hq': PartialsCardCntHq;
       'partials.card-home-hero': PartialsCardHomeHero;
       'partials.card-mem': PartialsCardMem;
       'partials.card-port': PartialsCardPort;

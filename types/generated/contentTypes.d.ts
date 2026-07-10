@@ -472,7 +472,10 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
         'about.leader-section',
         'about.intro-section',
         'about.banner-section',
-        'about.about-note'
+        'about.about-note',
+        'contact.headquarters',
+        'contact.find-us',
+        'contact.banner-form'
       ]
     >;
     title: Attribute.String;

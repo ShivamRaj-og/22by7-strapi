@@ -29,7 +29,14 @@
         "common.header",
         "common.footer",
         "blog.blog-listing",
-        "blog.pluse-listing"
+        "blog.pluse-listing",
+        "about.vision-section",
+        "about.team-member",
+        "about.our-team",
+        "about.leader-section",
+        "about.intro-section",
+        "about.banner-section",
+        "about.about-note"
       ]
     }
   }

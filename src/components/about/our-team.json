@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_about_our_teams",
+  "info": {
+    "displayName": "Our Team",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "reachData": {
+      "displayName": "card.ab.reac",
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.card-ab-reac"
+    }
+  }
+}

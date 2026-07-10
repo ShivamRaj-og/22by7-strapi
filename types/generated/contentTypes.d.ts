@@ -475,7 +475,8 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
         'about.about-note',
         'contact.headquarters',
         'contact.find-us',
-        'contact.banner-form'
+        'contact.banner-form',
+        'career.career-info'
       ]
     >;
     title: Attribute.String;

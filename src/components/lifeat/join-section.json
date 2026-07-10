@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_lifeat_join_sections",
+  "info": {
+    "displayName": "Join Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.cta"
+    }
+  }
+}

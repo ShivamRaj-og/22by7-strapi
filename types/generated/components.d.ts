@@ -425,6 +425,111 @@ export interface HomeOurPortfolio extends Schema.Component {
   };
 }
 
+export interface LifeatBannerSection extends Schema.Component {
+  collectionName: 'components_lifeat_banner_sections';
+  info: {
+    description: '';
+    displayName: 'Banner Section';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    title1: Attribute.String;
+    title2: Attribute.String;
+    title3: Attribute.String;
+    titleColor1: Attribute.String;
+    titleColor2: Attribute.String;
+    titleColor3: Attribute.String;
+  };
+}
+
+export interface LifeatConstantSection extends Schema.Component {
+  collectionName: 'components_lifeat_constant_sections';
+  info: {
+    description: '';
+    displayName: 'Constant Section';
+  };
+  attributes: {
+    description: Attribute.Text;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface LifeatCultureSection extends Schema.Component {
+  collectionName: 'components_lifeat_culture_sections';
+  info: {
+    description: '';
+    displayName: 'Culture Section';
+  };
+  attributes: {
+    cards: Attribute.Component<'partials.text-desc', true>;
+    description: Attribute.Text;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface LifeatEmployeeSection extends Schema.Component {
+  collectionName: 'components_lifeat_employee_sections';
+  info: {
+    description: '';
+    displayName: 'Employee Section';
+  };
+  attributes: {
+    offerings: Attribute.Component<'partials.guru-card', true>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface LifeatFindingSection extends Schema.Component {
+  collectionName: 'components_lifeat_finding_sections';
+  info: {
+    description: '';
+    displayName: 'Finding Section';
+  };
+  attributes: {
+    description: Attribute.Text;
+    description1: Attribute.Text;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
+export interface LifeatJoinSection extends Schema.Component {
+  collectionName: 'components_lifeat_join_sections';
+  info: {
+    description: '';
+    displayName: 'Join Section';
+  };
+  attributes: {
+    cta: Attribute.Component<'partials.cta'>;
+    description: Attribute.Text;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
+export interface LifeatWhatwe extends Schema.Component {
+  collectionName: 'components_lifeat_whatwes';
+  info: {
+    description: '';
+    displayName: 'Whatwe';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
 export interface PartialsCardAbReac extends Schema.Component {
   collectionName: 'components_partials_card_ab_reacs';
   info: {
@@ -634,6 +739,13 @@ declare module '@strapi/types' {
       'home.industries-section': HomeIndustriesSection;
       'home.intro-section': HomeIntroSection;
       'home.our-portfolio': HomeOurPortfolio;
+      'lifeat.banner-section': LifeatBannerSection;
+      'lifeat.constant-section': LifeatConstantSection;
+      'lifeat.culture-section': LifeatCultureSection;
+      'lifeat.employee-section': LifeatEmployeeSection;
+      'lifeat.finding-section': LifeatFindingSection;
+      'lifeat.join-section': LifeatJoinSection;
+      'lifeat.whatwe': LifeatWhatwe;
       'partials.card-ab-reac': PartialsCardAbReac;
       'partials.card-cnt-hq': PartialsCardCntHq;
       'partials.card-home-hero': PartialsCardHomeHero;

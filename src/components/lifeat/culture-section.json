@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_lifeat_culture_sections",
+  "info": {
+    "displayName": "Culture Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.text-desc"
+    }
+  }
+}

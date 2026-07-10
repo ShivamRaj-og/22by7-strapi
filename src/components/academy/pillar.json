@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_academy_pillars",
+  "info": {
+    "displayName": "Pillar"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "pillars": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.text-text-img"
+    }
+  }
+}

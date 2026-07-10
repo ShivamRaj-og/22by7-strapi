@@ -93,6 +93,46 @@ export interface AboutVisionSection extends Schema.Component {
   };
 }
 
+export interface AcademyBannerSection extends Schema.Component {
+  collectionName: 'components_academy_banner_sections';
+  info: {
+    displayName: 'Banner Section';
+  };
+  attributes: {
+    bgImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Attribute.Text;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
+export interface AcademyConstantSection extends Schema.Component {
+  collectionName: 'components_academy_constant_sections';
+  info: {
+    displayName: 'Constant Section';
+  };
+  attributes: {
+    description: Attribute.Text;
+    description1: Attribute.Text;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface AcademyPillar extends Schema.Component {
+  collectionName: 'components_academy_pillars';
+  info: {
+    displayName: 'Pillar';
+  };
+  attributes: {
+    pillars: Attribute.Component<'partials.text-text-img', true>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
 export interface BlogBlogContent extends Schema.Component {
   collectionName: 'components_blog_blog_contents';
   info: {
@@ -139,6 +179,20 @@ export interface BlogPluseListing extends Schema.Component {
     postTitle: Attribute.String;
     status: Attribute.Component<'partials.status'>;
     tags: Attribute.Component<'partials.text', true>;
+  };
+}
+
+export interface CareerCareerInfo extends Schema.Component {
+  collectionName: 'components_career_career_infos';
+  info: {
+    displayName: 'Career Info';
+  };
+  attributes: {
+    email: Attribute.String;
+    mainTitle: Attribute.String;
+    phone: Attribute.String;
+    status: Attribute.Component<'partials.status'>;
+    zohoLink: Attribute.Text;
   };
 }
 
@@ -498,9 +552,13 @@ declare module '@strapi/types' {
       'about.our-team': AboutOurTeam;
       'about.team-member': AboutTeamMember;
       'about.vision-section': AboutVisionSection;
+      'academy.banner-section': AcademyBannerSection;
+      'academy.constant-section': AcademyConstantSection;
+      'academy.pillar': AcademyPillar;
       'blog.blog-content': BlogBlogContent;
       'blog.blog-listing': BlogBlogListing;
       'blog.pluse-listing': BlogPluseListing;
+      'career.career-info': CareerCareerInfo;
       'common.footer': CommonFooter;
       'common.header': CommonHeader;
       'common.test-card': CommonTestCard;

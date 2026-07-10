@@ -397,6 +397,22 @@ export interface PartialsCardPort extends Schema.Component {
   };
 }
 
+export interface PartialsCardService extends Schema.Component {
+  collectionName: 'components_partials_card_services';
+  info: {
+    displayName: 'Card.Service';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    item1: Attribute.String;
+    item2: Attribute.String;
+    item3: Attribute.String;
+    item4: Attribute.String;
+    item5: Attribute.String;
+    title: Attribute.String;
+  };
+}
+
 export interface PartialsCardVis extends Schema.Component {
   collectionName: 'components_partials_card_vis';
   info: {
@@ -488,6 +504,65 @@ export interface PartialsTextTextImg extends Schema.Component {
   };
 }
 
+export interface ServiceBanner extends Schema.Component {
+  collectionName: 'components_service_banners';
+  info: {
+    description: '';
+    displayName: 'Banner';
+  };
+  attributes: {
+    description: Attribute.Text;
+    img: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imgBg: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imgBgGradient: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.RichText;
+  };
+}
+
+export interface ServiceServiceInfo extends Schema.Component {
+  collectionName: 'components_service_service_infos';
+  info: {
+    displayName: 'Service Info';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    title1: Attribute.String;
+    title2: Attribute.String;
+    title3: Attribute.String;
+  };
+}
+
+export interface ServiceServices extends Schema.Component {
+  collectionName: 'components_service_services';
+  info: {
+    description: '';
+    displayName: 'Services';
+  };
+  attributes: {
+    cards: Attribute.Component<'partials.card-service', true>;
+    status: Attribute.Component<'partials.status'>;
+    title1: Attribute.String;
+    title2: Attribute.String;
+  };
+}
+
+export interface ServiceWhyUs extends Schema.Component {
+  collectionName: 'components_service_why_uses';
+  info: {
+    displayName: 'Why Us';
+  };
+  attributes: {
+    cards: Attribute.Component<'partials.text-text-img', true>;
+    status: Attribute.Component<'partials.status'>;
+    title1: Attribute.String;
+    title2: Attribute.String;
+    title3: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -520,6 +595,7 @@ declare module '@strapi/types' {
       'partials.card-home-hero': PartialsCardHomeHero;
       'partials.card-mem': PartialsCardMem;
       'partials.card-port': PartialsCardPort;
+      'partials.card-service': PartialsCardService;
       'partials.card-vis': PartialsCardVis;
       'partials.cta': PartialsCta;
       'partials.img-text': PartialsImgText;
@@ -528,6 +604,10 @@ declare module '@strapi/types' {
       'partials.text': PartialsText;
       'partials.text-desc': PartialsTextDesc;
       'partials.text-text-img': PartialsTextTextImg;
+      'service.banner': ServiceBanner;
+      'service.service-info': ServiceServiceInfo;
+      'service.services': ServiceServices;
+      'service.why-us': ServiceWhyUs;
     }
   }
 }

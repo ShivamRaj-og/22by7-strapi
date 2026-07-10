@@ -518,6 +518,85 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
 }
 
+export interface ApiServiceTemplateServiceTemplate
+  extends Schema.CollectionType {
+  collectionName: 'service_templates';
+  info: {
+    description: '';
+    displayName: 'Service Template';
+    pluralName: 'service-templates';
+    singularName: 'service-template';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service-template.service-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    publishedAt: Attribute.DateTime;
+    sections: Attribute.DynamicZone<
+      [
+        'common.header',
+        'common.footer',
+        'service.why-us',
+        'service.services',
+        'service.service-info',
+        'service.banner'
+      ]
+    >;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::service-template.service-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServiceService extends Schema.CollectionType {
+  collectionName: 'services';
+  info: {
+    description: '';
+    displayName: 'Service';
+    pluralName: 'services';
+    singularName: 'service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    page_template: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'api::blog-template.blog-template'
+    >;
+    publishedAt: Attribute.DateTime;
+    slug: Attribute.UID<'api::service.service', 'title'>;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease extends Schema.CollectionType {
   collectionName: 'strapi_releases';
   info: {
@@ -958,6 +1037,8 @@ declare module '@strapi/types' {
       'api::blog.blog': ApiBlogBlog;
       'api::page-template.page-template': ApiPageTemplatePageTemplate;
       'api::page.page': ApiPagePage;
+      'api::service-template.service-template': ApiServiceTemplateServiceTemplate;
+      'api::service.service': ApiServiceService;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

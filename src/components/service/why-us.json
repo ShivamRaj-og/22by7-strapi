@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_service_why_uses",
+  "info": {
+    "displayName": "Why Us"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title1": {
+      "type": "string"
+    },
+    "title2": {
+      "type": "string"
+    },
+    "title3": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.text-text-img"
+    }
+  }
+}

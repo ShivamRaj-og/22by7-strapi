@@ -578,7 +578,8 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
         'aura.complexity',
         'aura.banner-section',
         'aura.aura-experience',
-        'aura.agentic'
+        'aura.agentic',
+        'privacy.content'
       ]
     >;
     title: Attribute.String;

@@ -64,7 +64,8 @@
         "aura.complexity",
         "aura.banner-section",
         "aura.aura-experience",
-        "aura.agentic"
+        "aura.agentic",
+        "privacy.content"
       ]
     }
   }

@@ -955,6 +955,19 @@ export interface PartialsTextTextImg extends Schema.Component {
   };
 }
 
+export interface PrivacyContent extends Schema.Component {
+  collectionName: 'components_privacy_contents';
+  info: {
+    description: '';
+    displayName: 'Content';
+  };
+  attributes: {
+    content: Attribute.RichText;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
 export interface ServiceBanner extends Schema.Component {
   collectionName: 'components_service_banners';
   info: {
@@ -1192,6 +1205,7 @@ declare module '@strapi/types' {
       'partials.text': PartialsText;
       'partials.text-desc': PartialsTextDesc;
       'partials.text-text-img': PartialsTextTextImg;
+      'privacy.content': PrivacyContent;
       'service.banner': ServiceBanner;
       'service.service-info': ServiceServiceInfo;
       'service.services': ServiceServices;

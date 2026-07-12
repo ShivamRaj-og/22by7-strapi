@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_aura_feature_sections",
+  "info": {
+    "displayName": "Feature Section"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "titleFeature": {
+      "type": "string"
+    },
+    "titleFocus": {
+      "type": "string"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.img-text"
+    },
+    "focusAreas": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.img-text"
+    }
+  }
+}

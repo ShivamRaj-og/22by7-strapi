@@ -177,6 +177,119 @@ export interface AcademyValueSection extends Schema.Component {
   };
 }
 
+export interface AuraAgentic extends Schema.Component {
+  collectionName: 'components_aura_agentics';
+  info: {
+    displayName: 'Agentic';
+  };
+  attributes: {
+    description: Attribute.Text;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface AuraAuraExperience extends Schema.Component {
+  collectionName: 'components_aura_aura_experiences';
+  info: {
+    displayName: 'Aura Experience';
+  };
+  attributes: {
+    leaders: Attribute.Component<'partials.text-text-img', true>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface AuraBannerSection extends Schema.Component {
+  collectionName: 'components_aura_banner_sections';
+  info: {
+    description: '';
+    displayName: 'Banner Section';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface AuraComplexity extends Schema.Component {
+  collectionName: 'components_aura_complexities';
+  info: {
+    description: '';
+    displayName: 'Complexity';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface AuraExperienceSection extends Schema.Component {
+  collectionName: 'components_aura_experience_sections';
+  info: {
+    description: '';
+    displayName: 'Experience Section';
+  };
+  attributes: {
+    cta: Attribute.Component<'partials.cta'>;
+    description: Attribute.Text;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
+export interface AuraFeatureSection extends Schema.Component {
+  collectionName: 'components_aura_feature_sections';
+  info: {
+    displayName: 'Feature Section';
+  };
+  attributes: {
+    features: Attribute.Component<'partials.img-text', true>;
+    focusAreas: Attribute.Component<'partials.img-text', true>;
+    status: Attribute.Component<'partials.status'>;
+    titleFeature: Attribute.String;
+    titleFocus: Attribute.String;
+  };
+}
+
+export interface AuraFutureBuilding extends Schema.Component {
+  collectionName: 'components_aura_future_buildings';
+  info: {
+    description: '';
+    displayName: 'Future Building';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    subHeading: Attribute.String;
+    subtitle: Attribute.String;
+    subtitle1: Attribute.String;
+    subtitle3: Attribute.String;
+    title: Attribute.String;
+  };
+}
+
+export interface AuraOverview extends Schema.Component {
+  collectionName: 'components_aura_overviews';
+  info: {
+    displayName: 'Overview';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+  };
+}
+
 export interface BlogBlogContent extends Schema.Component {
   collectionName: 'components_blog_blog_contents';
   info: {
@@ -1023,6 +1136,14 @@ declare module '@strapi/types' {
       'academy.journey-section': AcademyJourneySection;
       'academy.pillar': AcademyPillar;
       'academy.value-section': AcademyValueSection;
+      'aura.agentic': AuraAgentic;
+      'aura.aura-experience': AuraAuraExperience;
+      'aura.banner-section': AuraBannerSection;
+      'aura.complexity': AuraComplexity;
+      'aura.experience-section': AuraExperienceSection;
+      'aura.feature-section': AuraFeatureSection;
+      'aura.future-building': AuraFutureBuilding;
+      'aura.overview': AuraOverview;
       'blog.blog-content': BlogBlogContent;
       'blog.blog-listing': BlogBlogListing;
       'blog.pluse-listing': BlogPluseListing;

@@ -570,7 +570,15 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
         'lifeat.banner-section',
         'industry.why-choose-us',
         'industry.main-banner',
-        'industry.industry-solutions'
+        'industry.industry-solutions',
+        'aura.overview',
+        'aura.future-building',
+        'aura.feature-section',
+        'aura.experience-section',
+        'aura.complexity',
+        'aura.banner-section',
+        'aura.aura-experience',
+        'aura.agentic'
       ]
     >;
     title: Attribute.String;

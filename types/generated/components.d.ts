@@ -425,6 +425,97 @@ export interface HomeOurPortfolio extends Schema.Component {
   };
 }
 
+export interface IndustryBannerSection extends Schema.Component {
+  collectionName: 'components_industry_banner_sections';
+  info: {
+    description: '';
+    displayName: 'Banner Section';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface IndustryChallenges extends Schema.Component {
+  collectionName: 'components_industry_challenges';
+  info: {
+    description: '';
+    displayName: 'Challenges';
+  };
+  attributes: {
+    cards: Attribute.Component<'partials.text-desc', true>;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface IndustryIndustrySolutions extends Schema.Component {
+  collectionName: 'components_industry_industry_solutions';
+  info: {
+    description: '';
+    displayName: 'Industry Solutions';
+  };
+  attributes: {
+    description: Attribute.Text;
+    industrySolutions: Attribute.Component<'partials.card-indus', true>;
+    status: Attribute.Component<'partials.status'>;
+    subtitle: Attribute.String;
+    subtitleColor: Attribute.String;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface IndustryMainBanner extends Schema.Component {
+  collectionName: 'components_industry_main_banners';
+  info: {
+    description: '';
+    displayName: 'Main Banner';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface IndustryManufacture extends Schema.Component {
+  collectionName: 'components_industry_manufactures';
+  info: {
+    description: '';
+    displayName: 'Manufacture';
+  };
+  attributes: {
+    ManufactureData: Attribute.Component<'partials.card-service', true>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface IndustryWhyChooseUs extends Schema.Component {
+  collectionName: 'components_industry_why_choose_uses';
+  info: {
+    description: '';
+    displayName: 'Why Choose Us';
+  };
+  attributes: {
+    features: Attribute.Component<'partials.text-text-img', true>;
+    status: Attribute.Component<'partials.status'>;
+    subtitle: Attribute.String;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
 export interface LifeatBannerSection extends Schema.Component {
   collectionName: 'components_lifeat_banner_sections';
   info: {
@@ -570,6 +661,21 @@ export interface PartialsCardHomeHero extends Schema.Component {
     link: Attribute.Text;
     subtitle: Attribute.String;
     textColor: Attribute.String;
+    title: Attribute.String;
+  };
+}
+
+export interface PartialsCardIndus extends Schema.Component {
+  collectionName: 'components_partials_card_induses';
+  info: {
+    description: '';
+    displayName: 'card.indus';
+  };
+  attributes: {
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    subtitle1: Attribute.Text;
+    subtitle2: Attribute.Text;
+    subtitle3: Attribute.Text;
     title: Attribute.String;
   };
 }
@@ -935,6 +1041,12 @@ declare module '@strapi/types' {
       'home.industries-section': HomeIndustriesSection;
       'home.intro-section': HomeIntroSection;
       'home.our-portfolio': HomeOurPortfolio;
+      'industry.banner-section': IndustryBannerSection;
+      'industry.challenges': IndustryChallenges;
+      'industry.industry-solutions': IndustryIndustrySolutions;
+      'industry.main-banner': IndustryMainBanner;
+      'industry.manufacture': IndustryManufacture;
+      'industry.why-choose-us': IndustryWhyChooseUs;
       'lifeat.banner-section': LifeatBannerSection;
       'lifeat.constant-section': LifeatConstantSection;
       'lifeat.culture-section': LifeatCultureSection;
@@ -945,6 +1057,7 @@ declare module '@strapi/types' {
       'partials.card-ab-reac': PartialsCardAbReac;
       'partials.card-cnt-hq': PartialsCardCntHq;
       'partials.card-home-hero': PartialsCardHomeHero;
+      'partials.card-indus': PartialsCardIndus;
       'partials.card-mem': PartialsCardMem;
       'partials.card-port': PartialsCardPort;
       'partials.card-service': PartialsCardService;

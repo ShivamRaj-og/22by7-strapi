@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_industry_manufactures",
+  "info": {
+    "displayName": "Manufacture",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "ManufactureData": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.card-service"
+    }
+  }
+}

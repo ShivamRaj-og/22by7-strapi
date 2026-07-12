@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_industry_challenges",
+  "info": {
+    "displayName": "Challenges",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.text-desc"
+    }
+  }
+}

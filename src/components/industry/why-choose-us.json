@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_industry_why_choose_uses",
+  "info": {
+    "displayName": "Why Choose Us",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.text-text-img"
+    }
+  }
+}

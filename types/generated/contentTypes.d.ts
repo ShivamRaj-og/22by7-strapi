@@ -432,6 +432,84 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
 }
 
+export interface ApiIndustryTemplateIndustryTemplate
+  extends Schema.CollectionType {
+  collectionName: 'industry_templates';
+  info: {
+    displayName: 'Industry Template';
+    pluralName: 'industry-templates';
+    singularName: 'industry-template';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::industry-template.industry-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    publishedAt: Attribute.DateTime;
+    sections: Attribute.DynamicZone<
+      [
+        'common.header',
+        'common.footer',
+        'industry.banner-section',
+        'industry.challenges',
+        'industry.manufacture',
+        'industry.why-choose-us'
+      ]
+    >;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::industry-template.industry-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIndustryIndustry extends Schema.CollectionType {
+  collectionName: 'industries';
+  info: {
+    description: '';
+    displayName: 'Industry';
+    pluralName: 'industries';
+    singularName: 'industry';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::industry.industry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    page_template: Attribute.Relation<
+      'api::industry.industry',
+      'oneToOne',
+      'api::industry-template.industry-template'
+    >;
+    publishedAt: Attribute.DateTime;
+    slug: Attribute.UID<'api::industry.industry', 'title'>;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::industry.industry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
   collectionName: 'page_templates';
   info: {
@@ -489,7 +567,10 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
         'lifeat.employee-section',
         'lifeat.culture-section',
         'lifeat.constant-section',
-        'lifeat.banner-section'
+        'lifeat.banner-section',
+        'industry.why-choose-us',
+        'industry.main-banner',
+        'industry.industry-solutions'
       ]
     >;
     title: Attribute.String;
@@ -1132,6 +1213,8 @@ declare module '@strapi/types' {
       'admin::user': AdminUser;
       'api::blog-template.blog-template': ApiBlogTemplateBlogTemplate;
       'api::blog.blog': ApiBlogBlog;
+      'api::industry-template.industry-template': ApiIndustryTemplateIndustryTemplate;
+      'api::industry.industry': ApiIndustryIndustry;
       'api::page-template.page-template': ApiPageTemplatePageTemplate;
       'api::page.page': ApiPagePage;
       'api::service-template.service-template': ApiServiceTemplateServiceTemplate;

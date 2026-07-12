@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_industry_industry_solutions",
+  "info": {
+    "displayName": "Industry Solutions",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "subtitleColor": {
+      "type": "string"
+    },
+    "industrySolutions": {
+      "displayName": "card.indus",
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.card-indus"
+    }
+  }
+}

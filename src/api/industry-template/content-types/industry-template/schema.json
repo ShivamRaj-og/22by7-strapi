@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "industry_templates",
+  "info": {
+    "singularName": "industry-template",
+    "pluralName": "industry-templates",
+    "displayName": "Industry Template"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "common.header",
+        "common.footer",
+        "industry.banner-section",
+        "industry.challenges",
+        "industry.manufacture",
+        "industry.why-choose-us"
+      ]
+    }
+  }
+}

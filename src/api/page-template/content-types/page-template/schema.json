@@ -53,7 +53,10 @@
         "lifeat.employee-section",
         "lifeat.culture-section",
         "lifeat.constant-section",
-        "lifeat.banner-section"
+        "lifeat.banner-section",
+        "industry.why-choose-us",
+        "industry.main-banner",
+        "industry.industry-solutions"
       ]
     }
   }

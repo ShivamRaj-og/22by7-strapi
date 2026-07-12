@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_solution_stats_sections",
+  "info": {
+    "displayName": "Stats Sections",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "cards": {
+      "displayName": "stat.card",
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.stat-card"
+    }
+  }
+}

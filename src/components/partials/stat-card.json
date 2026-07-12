@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_partials_stat_cards",
+  "info": {
+    "displayName": "stat.card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "count": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  }
+}

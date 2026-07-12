@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_solution_slider_sections",
+  "info": {
+    "displayName": "Slider Section"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.img-text"
+    }
+  }
+}

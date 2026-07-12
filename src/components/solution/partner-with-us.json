@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_solution_partner_with_uses",
+  "info": {
+    "displayName": "Partner With Us"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.img-text"
+    }
+  }
+}

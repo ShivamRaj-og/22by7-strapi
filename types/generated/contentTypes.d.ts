@@ -611,6 +611,89 @@ export interface ApiServiceService extends Schema.CollectionType {
   };
 }
 
+export interface ApiSolutionTemplateSolutionTemplate
+  extends Schema.CollectionType {
+  collectionName: 'solution_templates';
+  info: {
+    description: '';
+    displayName: 'Solution Template';
+    pluralName: 'solution-templates';
+    singularName: 'solution-template';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::solution-template.solution-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    publishedAt: Attribute.DateTime;
+    sections: Attribute.DynamicZone<
+      [
+        'common.header',
+        'common.footer',
+        'solution.we-stand-out',
+        'solution.stats-sections',
+        'solution.slider-section',
+        'solution.partner-with-us',
+        'solution.our-partners',
+        'solution.offering-section',
+        'solution.banner',
+        'solution.approach'
+      ]
+    >;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::solution-template.solution-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSolutionSolution extends Schema.CollectionType {
+  collectionName: 'solutions';
+  info: {
+    description: '';
+    displayName: 'Solution';
+    pluralName: 'solutions';
+    singularName: 'solution';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    page_template: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'api::solution-template.solution-template'
+    >;
+    publishedAt: Attribute.DateTime;
+    slug: Attribute.UID<'api::solution.solution', 'title'>;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease extends Schema.CollectionType {
   collectionName: 'strapi_releases';
   info: {
@@ -1053,6 +1136,8 @@ declare module '@strapi/types' {
       'api::page.page': ApiPagePage;
       'api::service-template.service-template': ApiServiceTemplateServiceTemplate;
       'api::service.service': ApiServiceService;
+      'api::solution-template.solution-template': ApiSolutionTemplateSolutionTemplate;
+      'api::solution.solution': ApiSolutionSolution;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

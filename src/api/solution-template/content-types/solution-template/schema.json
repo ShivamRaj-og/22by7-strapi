@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solution_templates",
+  "info": {
+    "singularName": "solution-template",
+    "pluralName": "solution-templates",
+    "displayName": "Solution Template",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "common.header",
+        "common.footer",
+        "solution.we-stand-out",
+        "solution.stats-sections",
+        "solution.slider-section",
+        "solution.partner-with-us",
+        "solution.our-partners",
+        "solution.offering-section",
+        "solution.banner",
+        "solution.approach"
+      ]
+    }
+  }
+}

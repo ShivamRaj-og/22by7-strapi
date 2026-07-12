@@ -680,6 +680,19 @@ export interface PartialsNumText extends Schema.Component {
   };
 }
 
+export interface PartialsStatCard extends Schema.Component {
+  collectionName: 'components_partials_stat_cards';
+  info: {
+    description: '';
+    displayName: 'stat.card';
+  };
+  attributes: {
+    count: Attribute.String;
+    subtitle: Attribute.String;
+    title: Attribute.String;
+  };
+}
+
 export interface PartialsStatus extends Schema.Component {
   collectionName: 'components_partials_statuses';
   info: {
@@ -782,6 +795,112 @@ export interface ServiceWhyUs extends Schema.Component {
   };
 }
 
+export interface SolutionApproach extends Schema.Component {
+  collectionName: 'components_solution_approaches';
+  info: {
+    description: '';
+    displayName: 'Approach';
+  };
+  attributes: {
+    cards: Attribute.Component<'partials.text-desc', true>;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
+export interface SolutionBanner extends Schema.Component {
+  collectionName: 'components_solution_banners';
+  info: {
+    displayName: 'Banner';
+  };
+  attributes: {
+    description: Attribute.Text;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
+export interface SolutionOfferingSection extends Schema.Component {
+  collectionName: 'components_solution_offering_sections';
+  info: {
+    displayName: 'Offering Section';
+  };
+  attributes: {
+    offerings: Attribute.Component<'partials.text-text-img', true>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
+export interface SolutionOurPartners extends Schema.Component {
+  collectionName: 'components_solution_our_partners';
+  info: {
+    displayName: 'Our Partners';
+  };
+  attributes: {
+    images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
+export interface SolutionPartnerWithUs extends Schema.Component {
+  collectionName: 'components_solution_partner_with_uses';
+  info: {
+    displayName: 'Partner With Us';
+  };
+  attributes: {
+    cards: Attribute.Component<'partials.img-text', true>;
+    status: Attribute.Component<'partials.status'>;
+    subtitle: Attribute.String;
+    title: Attribute.String;
+    titleColor: Attribute.String;
+  };
+}
+
+export interface SolutionSliderSection extends Schema.Component {
+  collectionName: 'components_solution_slider_sections';
+  info: {
+    displayName: 'Slider Section';
+  };
+  attributes: {
+    slides: Attribute.Component<'partials.img-text', true>;
+    status: Attribute.Component<'partials.status'>;
+  };
+}
+
+export interface SolutionStatsSections extends Schema.Component {
+  collectionName: 'components_solution_stats_sections';
+  info: {
+    description: '';
+    displayName: 'Stats Sections';
+  };
+  attributes: {
+    cards: Attribute.Component<'partials.stat-card', true>;
+    status: Attribute.Component<'partials.status'>;
+  };
+}
+
+export interface SolutionWeStandOut extends Schema.Component {
+  collectionName: 'components_solution_we_stand_outs';
+  info: {
+    description: '';
+    displayName: 'We Stand Out';
+  };
+  attributes: {
+    cardImage1: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    cardImage2: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    cardImage3: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    cardTitle1: Attribute.Text;
+    cardTitle2: Attribute.Text;
+    cardTitle3: Attribute.Text;
+    status: Attribute.Component<'partials.status'>;
+    title: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -834,6 +953,7 @@ declare module '@strapi/types' {
       'partials.guru-card': PartialsGuruCard;
       'partials.img-text': PartialsImgText;
       'partials.num-text': PartialsNumText;
+      'partials.stat-card': PartialsStatCard;
       'partials.status': PartialsStatus;
       'partials.text': PartialsText;
       'partials.text-desc': PartialsTextDesc;
@@ -842,6 +962,14 @@ declare module '@strapi/types' {
       'service.service-info': ServiceServiceInfo;
       'service.services': ServiceServices;
       'service.why-us': ServiceWhyUs;
+      'solution.approach': SolutionApproach;
+      'solution.banner': SolutionBanner;
+      'solution.offering-section': SolutionOfferingSection;
+      'solution.our-partners': SolutionOurPartners;
+      'solution.partner-with-us': SolutionPartnerWithUs;
+      'solution.slider-section': SolutionSliderSection;
+      'solution.stats-sections': SolutionStatsSections;
+      'solution.we-stand-out': SolutionWeStandOut;
     }
   }
 }

@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_solution_our_partners",
+  "info": {
+    "displayName": "Our Partners"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

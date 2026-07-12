@@ -476,7 +476,20 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
         'contact.headquarters',
         'contact.find-us',
         'contact.banner-form',
-        'career.career-info'
+        'career.career-info',
+        'academy.value-section',
+        'academy.pillar',
+        'academy.journey-section',
+        'academy.gurukul',
+        'academy.constant-section',
+        'academy.banner-section',
+        'lifeat.whatwe',
+        'lifeat.join-section',
+        'lifeat.finding-section',
+        'lifeat.employee-section',
+        'lifeat.culture-section',
+        'lifeat.constant-section',
+        'lifeat.banner-section'
       ]
     >;
     title: Attribute.String;

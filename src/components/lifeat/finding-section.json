@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_lifeat_finding_sections",
+  "info": {
+    "displayName": "Finding Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "description1": {
+      "type": "text"
+    }
+  }
+}

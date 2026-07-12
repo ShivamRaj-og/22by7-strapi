@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_lifeat_banner_sections",
+  "info": {
+    "displayName": "Banner Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title1": {
+      "type": "string"
+    },
+    "titleColor1": {
+      "type": "string"
+    },
+    "title2": {
+      "type": "string"
+    },
+    "titleColor2": {
+      "type": "string"
+    },
+    "title3": {
+      "type": "string"
+    },
+    "titleColor3": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

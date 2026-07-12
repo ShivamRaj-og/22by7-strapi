@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_lifeat_employee_sections",
+  "info": {
+    "displayName": "Employee Section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "offerings": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.guru-card"
+    }
+  }
+}

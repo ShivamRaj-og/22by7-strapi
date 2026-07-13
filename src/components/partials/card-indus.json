@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_partials_card_induses",
+  "info": {
+    "displayName": "card.indus",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "subtitle1": {
+      "type": "text"
+    },
+    "subtitle2": {
+      "type": "text"
+    },
+    "subtitle3": {
+      "type": "text"
+    }
+  }
+}

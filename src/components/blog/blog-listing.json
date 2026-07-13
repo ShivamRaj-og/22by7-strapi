@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_blog_blog_listings",
+  "info": {
+    "displayName": "Blog Listing"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "filter": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.text"
+    },
+    "popularBlogTitle": {
+      "type": "string"
+    },
+    "popularBlogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog.blog"
+    }
+  }
+}

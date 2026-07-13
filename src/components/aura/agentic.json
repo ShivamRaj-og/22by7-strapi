@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_aura_agentics",
+  "info": {
+    "displayName": "Agentic"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

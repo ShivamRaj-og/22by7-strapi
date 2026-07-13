@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_career_career_infos",
+  "info": {
+    "displayName": "Career Info"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "mainTitle": {
+      "type": "string"
+    },
+    "zohoLink": {
+      "type": "text"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    }
+  }
+}

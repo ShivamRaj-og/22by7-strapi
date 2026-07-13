@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_aura_aura_experiences",
+  "info": {
+    "displayName": "Aura Experience"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "leaders": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.text-text-img"
+    }
+  }
+}

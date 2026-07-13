@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_partials_text_descs",
+  "info": {
+    "displayName": "Text.Desc"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_about_team_members",
+  "info": {
+    "displayName": "Team Member",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "mainTitle": {
+      "type": "string"
+    },
+    "founderTitle": {
+      "type": "string"
+    },
+    "managementTitle": {
+      "type": "string"
+    },
+    "founders": {
+      "displayName": "card.mem",
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.card-mem"
+    },
+    "managementTeam": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.card-mem"
+    }
+  }
+}

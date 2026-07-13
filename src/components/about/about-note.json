@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_about_about_notes",
+  "info": {
+    "displayName": "About Note"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "note": {
+      "type": "text"
+    }
+  }
+}

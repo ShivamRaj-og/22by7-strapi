@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_contact_find_uses",
+  "info": {
+    "displayName": "Find Us"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "mapLink": {
+      "type": "text"
+    }
+  }
+}

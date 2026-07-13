@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_contact_headquarters",
+  "info": {
+    "displayName": "Headquarters",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleColour": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.card-cnt-hq"
+    }
+  }
+}

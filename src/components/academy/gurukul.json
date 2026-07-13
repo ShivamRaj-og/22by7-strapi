@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_academy_gurukuls",
+  "info": {
+    "displayName": "Gurukul",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "titleColor": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "offerings": {
+      "displayName": "guru.card",
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.guru-card"
+    }
+  }
+}

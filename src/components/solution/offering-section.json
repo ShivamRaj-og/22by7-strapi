@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_solution_offering_sections",
+  "info": {
+    "displayName": "Offering Section"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.status"
+    },
+    "title": {
+      "type": "string"
+    },
+    "offerings": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.text-text-img"
+    }
+  }
+}

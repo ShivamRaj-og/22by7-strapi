@@ -365,6 +365,7 @@ export interface AdminUser extends Schema.CollectionType {
 export interface ApiBlogTemplateBlogTemplate extends Schema.CollectionType {
   collectionName: 'blog_templates';
   info: {
+    description: '';
     displayName: 'Blog Template';
     pluralName: 'blog-templates';
     singularName: 'blog-template';
@@ -381,7 +382,9 @@ export interface ApiBlogTemplateBlogTemplate extends Schema.CollectionType {
     > &
       Attribute.Private;
     publishedAt: Attribute.DateTime;
-    sections: Attribute.DynamicZone<['blog.blog-content']>;
+    sections: Attribute.DynamicZone<
+      ['blog.blog-content', 'common.header', 'common.footer']
+    >;
     title: Attribute.String;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<
@@ -396,6 +399,7 @@ export interface ApiBlogTemplateBlogTemplate extends Schema.CollectionType {
 export interface ApiBlogBlog extends Schema.CollectionType {
   collectionName: 'blogs';
   info: {
+    description: '';
     displayName: 'Blog';
     pluralName: 'blogs';
     singularName: 'blog';
@@ -411,13 +415,97 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       Attribute.Private;
     date: Attribute.Date;
     description: Attribute.Text;
+    page_template: Attribute.Relation<
+      'api::blog.blog',
+      'oneToOne',
+      'api::blog-template.blog-template'
+    >;
     publishedAt: Attribute.DateTime;
     readTime: Attribute.Integer;
     slug: Attribute.UID<'api::blog.blog', 'title'>;
     thumbnail: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Attribute.String;
+    type: Attribute.Enumeration<['Blog', 'Pulse']>;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIndustryTemplateIndustryTemplate
+  extends Schema.CollectionType {
+  collectionName: 'industry_templates';
+  info: {
+    displayName: 'Industry Template';
+    pluralName: 'industry-templates';
+    singularName: 'industry-template';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::industry-template.industry-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    publishedAt: Attribute.DateTime;
+    sections: Attribute.DynamicZone<
+      [
+        'common.header',
+        'common.footer',
+        'industry.banner-section',
+        'industry.challenges',
+        'industry.manufacture',
+        'industry.why-choose-us'
+      ]
+    >;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::industry-template.industry-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIndustryIndustry extends Schema.CollectionType {
+  collectionName: 'industries';
+  info: {
+    description: '';
+    displayName: 'Industry';
+    pluralName: 'industries';
+    singularName: 'industry';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::industry.industry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    page_template: Attribute.Relation<
+      'api::industry.industry',
+      'oneToOne',
+      'api::industry-template.industry-template'
+    >;
+    publishedAt: Attribute.DateTime;
+    slug: Attribute.UID<'api::industry.industry', 'title'>;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::industry.industry',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -453,7 +541,45 @@ export interface ApiPageTemplatePageTemplate extends Schema.CollectionType {
         'home.awards-section',
         'common.testimonial-section',
         'common.header',
-        'common.footer'
+        'common.footer',
+        'blog.blog-listing',
+        'blog.pluse-listing',
+        'about.vision-section',
+        'about.team-member',
+        'about.our-team',
+        'about.leader-section',
+        'about.intro-section',
+        'about.banner-section',
+        'about.about-note',
+        'contact.headquarters',
+        'contact.find-us',
+        'contact.banner-form',
+        'career.career-info',
+        'academy.value-section',
+        'academy.pillar',
+        'academy.journey-section',
+        'academy.gurukul',
+        'academy.constant-section',
+        'academy.banner-section',
+        'lifeat.whatwe',
+        'lifeat.join-section',
+        'lifeat.finding-section',
+        'lifeat.employee-section',
+        'lifeat.culture-section',
+        'lifeat.constant-section',
+        'lifeat.banner-section',
+        'industry.why-choose-us',
+        'industry.main-banner',
+        'industry.industry-solutions',
+        'aura.overview',
+        'aura.future-building',
+        'aura.feature-section',
+        'aura.experience-section',
+        'aura.complexity',
+        'aura.banner-section',
+        'aura.aura-experience',
+        'aura.agentic',
+        'privacy.content'
       ]
     >;
     title: Attribute.String;
@@ -492,6 +618,168 @@ export interface ApiPagePage extends Schema.CollectionType {
     title: Attribute.String;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServiceTemplateServiceTemplate
+  extends Schema.CollectionType {
+  collectionName: 'service_templates';
+  info: {
+    description: '';
+    displayName: 'Service Template';
+    pluralName: 'service-templates';
+    singularName: 'service-template';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service-template.service-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    publishedAt: Attribute.DateTime;
+    sections: Attribute.DynamicZone<
+      [
+        'common.header',
+        'common.footer',
+        'service.why-us',
+        'service.services',
+        'service.service-info',
+        'service.banner'
+      ]
+    >;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::service-template.service-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiServiceService extends Schema.CollectionType {
+  collectionName: 'services';
+  info: {
+    description: '';
+    displayName: 'Service';
+    pluralName: 'services';
+    singularName: 'service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    page_template: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'api::service-template.service-template'
+    >;
+    publishedAt: Attribute.DateTime;
+    slug: Attribute.UID<'api::service.service', 'title'>;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::service.service',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSolutionTemplateSolutionTemplate
+  extends Schema.CollectionType {
+  collectionName: 'solution_templates';
+  info: {
+    description: '';
+    displayName: 'Solution Template';
+    pluralName: 'solution-templates';
+    singularName: 'solution-template';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::solution-template.solution-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    publishedAt: Attribute.DateTime;
+    sections: Attribute.DynamicZone<
+      [
+        'common.header',
+        'common.footer',
+        'solution.we-stand-out',
+        'solution.stats-sections',
+        'solution.slider-section',
+        'solution.partner-with-us',
+        'solution.our-partners',
+        'solution.offering-section',
+        'solution.banner',
+        'solution.approach'
+      ]
+    >;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::solution-template.solution-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSolutionSolution extends Schema.CollectionType {
+  collectionName: 'solutions';
+  info: {
+    description: '';
+    displayName: 'Solution';
+    pluralName: 'solutions';
+    singularName: 'solution';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    page_template: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'api::solution-template.solution-template'
+    >;
+    publishedAt: Attribute.DateTime;
+    slug: Attribute.UID<'api::solution.solution', 'title'>;
+    title: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::solution.solution',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -934,8 +1222,14 @@ declare module '@strapi/types' {
       'admin::user': AdminUser;
       'api::blog-template.blog-template': ApiBlogTemplateBlogTemplate;
       'api::blog.blog': ApiBlogBlog;
+      'api::industry-template.industry-template': ApiIndustryTemplateIndustryTemplate;
+      'api::industry.industry': ApiIndustryIndustry;
       'api::page-template.page-template': ApiPageTemplatePageTemplate;
       'api::page.page': ApiPagePage;
+      'api::service-template.service-template': ApiServiceTemplateServiceTemplate;
+      'api::service.service': ApiServiceService;
+      'api::solution-template.solution-template': ApiSolutionTemplateSolutionTemplate;
+      'api::solution.solution': ApiSolutionSolution;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

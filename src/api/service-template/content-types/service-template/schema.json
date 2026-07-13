@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_templates",
+  "info": {
+    "singularName": "service-template",
+    "pluralName": "service-templates",
+    "displayName": "Service Template",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "common.header",
+        "common.footer",
+        "service.why-us",
+        "service.services",
+        "service.service-info",
+        "service.banner"
+      ]
+    }
+  }
+}

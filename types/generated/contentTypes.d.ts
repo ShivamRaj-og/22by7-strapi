@@ -432,6 +432,41 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactFormContactForm extends Schema.CollectionType {
+  collectionName: 'contact_forms';
+  info: {
+    displayName: 'Contact Form';
+    pluralName: 'contact-forms';
+    singularName: 'contact-form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-form.contact-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    email: Attribute.Email;
+    first_name: Attribute.String;
+    last_name: Attribute.String;
+    message: Attribute.Text;
+    publishedAt: Attribute.DateTime;
+    solution: Attribute.String;
+    subject: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::contact-form.contact-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiIndustryTemplateIndustryTemplate
   extends Schema.CollectionType {
   collectionName: 'industry_templates';
@@ -503,6 +538,36 @@ export interface ApiIndustryIndustry extends Schema.CollectionType {
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<
       'api::industry.industry',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNewsletterFormNewsletterForm extends Schema.CollectionType {
+  collectionName: 'newsletter_forms';
+  info: {
+    displayName: 'Newsletter Form';
+    pluralName: 'newsletter-forms';
+    singularName: 'newsletter-form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::newsletter-form.newsletter-form',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    email: Attribute.String;
+    publishedAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::newsletter-form.newsletter-form',
       'oneToOne',
       'admin::user'
     > &
@@ -1222,8 +1287,10 @@ declare module '@strapi/types' {
       'admin::user': AdminUser;
       'api::blog-template.blog-template': ApiBlogTemplateBlogTemplate;
       'api::blog.blog': ApiBlogBlog;
+      'api::contact-form.contact-form': ApiContactFormContactForm;
       'api::industry-template.industry-template': ApiIndustryTemplateIndustryTemplate;
       'api::industry.industry': ApiIndustryIndustry;
+      'api::newsletter-form.newsletter-form': ApiNewsletterFormNewsletterForm;
       'api::page-template.page-template': ApiPageTemplatePageTemplate;
       'api::page.page': ApiPagePage;
       'api::service-template.service-template': ApiServiceTemplateServiceTemplate;

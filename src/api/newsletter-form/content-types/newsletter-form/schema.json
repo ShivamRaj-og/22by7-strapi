@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "newsletter_forms",
+  "info": {
+    "singularName": "newsletter-form",
+    "pluralName": "newsletter-forms",
+    "displayName": "Newsletter Form"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    }
+  }
+}
